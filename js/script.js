@@ -133,7 +133,40 @@ $('.modal__close').on('click', (e) => {
   }, 500);
 });
 
+$('.button3').click(function () {
+  var buttonId = $(this).attr('id');
+  $('body').addClass('locked');
+  $('#modal-container3').removeAttr('class').addClass(buttonId);
+  $('#modal-container3').removeClass('hide');
+  $('.modal-background3').addClass('opened');
 
+})
+
+$('.modal-background3').click(function () {
+  $('#modal-container3').addClass('out');
+  $('body').removeClass('modal-active');
+  $('.modal-background3').removeClass('opened');
+  $('body').removeClass('locked');
+});
+$('.modal-background3').on('click', (e) => {
+  setTimeout(() => {
+    $('#modal-container3').addClass('hide');
+  }, 500);
+});
+$('.modal__close').click(function () {
+  $('.showblock2').removeClass('Show');
+  $('#modal-container3').addClass('out');
+  $('body').removeClass('modal-active');
+  $('.modal-background3').removeClass('opened');
+  $('body').removeClass('locked');
+});
+$('.modal__close').on('click', (e) => {
+  $('.showblock2').removeClass('Show');
+  $('.showblock_background2').removeClass('Show_bg');
+  setTimeout(() => {
+    $('#modal-container3').addClass('hide');
+  }, 500);
+});
 $('.button4').click(function () {
   var buttonId = $(this).attr('id');
   $('body').addClass('locked');
