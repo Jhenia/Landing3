@@ -169,6 +169,74 @@ $('.modal__close').on('click', (e) => {
   }, 500);
 });
 
+$('.button5').click(function () {
+  var buttonId = $(this).attr('id');
+  $('body').addClass('locked');
+  $('#modal-container5').removeAttr('class').addClass(buttonId);
+  $('#modal-container5').removeClass('hide');
+  $('.modal-background5').addClass('opened');
+
+})
+
+$('.modal-background5').click(function () {
+  $('#modal-container5').addClass('out');
+  $('body').removeClass('modal-active');
+  $('.modal-background5').removeClass('opened');
+  $('body').removeClass('locked');
+});
+$('.modal-background5').on('click', (e) => {
+  setTimeout(() => {
+    $('#modal-container5').addClass('hide');
+  }, 500);
+});
+$('.modal__close').click(function () {
+  $('.showblock').removeClass('Show');
+  $('#modal-container5').addClass('out');
+  $('body').removeClass('modal-active');
+  $('.modal-background5').removeClass('opened');
+  $('body').removeClass('locked');
+});
+$('.modal__close').on('click', (e) => {
+  $('.showblock5').removeClass('Show');
+  $('.showblock_background5').removeClass('Show_bg');
+  setTimeout(() => {
+    $('#modal-container5').addClass('hide');
+  }, 500);
+});
+$('.button6').click(function () {
+  var buttonId = $(this).attr('id');
+  $('body').addClass('locked');
+  $('#modal-container6').removeAttr('class').addClass(buttonId);
+  $('#modal-container6').removeClass('hide');
+  $('.modal-background6').addClass('opened');
+
+})
+
+$('.modal-background6').click(function () {
+  $('#modal-container6').addClass('out');
+  $('body').removeClass('modal-active');
+  $('.modal-background6').removeClass('opened');
+  $('body').removeClass('locked');
+});
+$('.modal-background6').on('click', (e) => {
+  setTimeout(() => {
+    $('#modal-container6').addClass('hide');
+  }, 500);
+});
+$('.modal__close').click(function () {
+  $('.showblock').removeClass('Show');
+  $('#modal-container6').addClass('out');
+  $('body').removeClass('modal-active');
+  $('.modal-background6').removeClass('opened');
+  $('body').removeClass('locked');
+});
+$('.modal__close').on('click', (e) => {
+  $('.showblock6').removeClass('Show');
+  $('.showblock_background6').removeClass('Show_bg');
+  setTimeout(() => {
+    $('#modal-container6').addClass('hide');
+  }, 500);
+});
 $('.modal__form1').submit(function (e) {
   let show = document.querySelector(".showblock");
   let showbg = document.querySelector(".showblock_background");
@@ -263,6 +331,60 @@ $('.modal__form4').submit(function (e) {
     $('#modal-container4').addClass('hide');
     $('.modal-background2').removeClass('opened');
     $('.modal-background4').removeClass('opened');
+    showbg2.classList.toggle("Show_bg");
+    $('.modal-background').removeClass('opened');
+
+
+
+    $('body').addClass('locked');
+    //Если все графы заполнены, то показываем popup
+
+
+    //очищаем все данные текстовых полей, кроме кнопок
+    $('form input').not(':button, :submit').val('');
+  }
+  e.preventDefault();
+});
+$('.modal__form5').submit(function (e) {
+  let show2 = document.querySelector(".showblock5");
+  let showbg2 = document.querySelector(".showblock_background5");
+  var empty = $(this).parent().find("input").filter(function () {
+    return this.value === "";
+  });
+  if (!empty.length) {
+    show2.classList.toggle("Show");
+    $('#modal-container').addClass('hide');
+    $('#modal-container2').addClass('hide');
+    $('#modal-container5').addClass('hide');
+    $('.modal-background2').removeClass('opened');
+    $('.modal-background5').removeClass('opened');
+    showbg2.classList.toggle("Show_bg");
+    $('.modal-background').removeClass('opened');
+
+
+
+    $('body').addClass('locked');
+    //Если все графы заполнены, то показываем popup
+
+
+    //очищаем все данные текстовых полей, кроме кнопок
+    $('form input').not(':button, :submit').val('');
+  }
+  e.preventDefault();
+});
+$('.modal__form6').submit(function (e) {
+  let show2 = document.querySelector(".showblock6");
+  let showbg2 = document.querySelector(".showblock_background6");
+  var empty = $(this).parent().find("input").filter(function () {
+    return this.value === "";
+  });
+  if (!empty.length) {
+    show2.classList.toggle("Show");
+    $('#modal-container').addClass('hide');
+    $('#modal-container2').addClass('hide');
+    $('#modal-container6').addClass('hide');
+    $('.modal-background2').removeClass('opened');
+    $('.modal-background6').removeClass('opened');
     showbg2.classList.toggle("Show_bg");
     $('.modal-background').removeClass('opened');
 
