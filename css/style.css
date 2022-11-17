@@ -2244,7 +2244,7 @@ body.modal-active {
 }
 
 .logos__box img {
-  margin-left: 12px;
+  margin-left: 24px;
 }
 
 *,
@@ -2464,6 +2464,10 @@ a {
 
   .header .burger.active {
     background-position-x: 5px !important;
+  }
+
+  .logos__box img {
+    margin-left: 12px;
   }
 
   .showblock5,
